@@ -1,7 +1,6 @@
 from customtkinter import *
 from tkinter.messagebox import showerror, showinfo
-from typing import Union, assert_never
-
+from typing import Union
 
 main_font = ("Segoe UI", 20)
 root = CTk()
@@ -104,7 +103,7 @@ def evaluate_bmi(bmi: Union[int, float]) -> str:
     elif bmi >= 40:
         return level6
     else:
-        assert_never(bmi)
+        raise Exception
 
 
 def calculate_bmi() -> None:
@@ -165,7 +164,6 @@ height_lbl_txt = "Введите рост в см"
 calculate_btn_txt = "Рассчитать ИМТ"
 result_lbl_txt = "Ваш ИМТ"
 
-# Инициализация
 bmi_lbl = CTkLabel(master=root, font=("Segoe Ui", 35), text=bmi_prog_label_txt)
 
 change_lang_to_ru = CTkButton(master=root, text="Русский", command=set_ru_lang)
@@ -182,7 +180,6 @@ calculate_bmi_btn = CTkButton(master=root, text=calculate_btn_txt, font=main_fon
 bmi_num = CTkEntry(master=root, width=75, font=main_font)
 bmi_meaning = CTkEntry(master=root, width=500, font=main_font)
 
-# Расположения в окне
 bmi_lbl.place(x=20, y=20)
 change_lang_to_ru.place(x=369, y=20)
 change_lang_to_en.place(x=369, y=70)
@@ -197,5 +194,4 @@ result_lbl.place(x=20, y=300)
 bmi_num.place(x=120, y=300)
 bmi_meaning.place(x=20, y=350)
 
-# set_en_lang()
 root.mainloop()
