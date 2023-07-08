@@ -176,7 +176,7 @@ result_lbl = CTkLabel(master=root, text=result_lbl_txt, font=main_font)
 mass_entry = CTkEntry(master=root, width=80, font=main_font)
 height_entry = CTkEntry(master=root, width=80, font=main_font)
 
-calculate_bmi_btn = CTkButton(master=root, text=calculate_btn_txt, font=main_font, command=calculate_bmi, width=300)
+calculate_bmi_btn = CTkButton(master=root, text=calculate_btn_txt, font=main_font, command=calculate_bmi, width=320)
 bmi_num = CTkEntry(master=root, width=75, font=main_font)
 bmi_meaning = CTkEntry(master=root, width=500, font=main_font)
 
@@ -185,9 +185,9 @@ change_lang_to_ru.place(x=369, y=20)
 change_lang_to_en.place(x=369, y=70)
 
 mass_lbl.place(x=20, y=100)
-mass_entry.place(x=240, y=100)
+mass_entry.place(x=260, y=100)
 height_lbl.place(x=20, y=150)
-height_entry.place(x=240, y=150)
+height_entry.place(x=260, y=150)
 
 calculate_bmi_btn.place(x=20, y=200)
 result_lbl.place(x=20, y=300)
