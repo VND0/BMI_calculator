@@ -98,9 +98,9 @@ def evaluate_bmi(bmi: Union[int, float]) -> str:
         return level3
     elif 30 < bmi <= 35:
         return level4
-    elif 35 < bmi < 40:
+    elif 35 < bmi <= 40:
         return level5
-    elif bmi >= 40:
+    elif bmi > 40:
         return level6
     else:
         raise Exception
