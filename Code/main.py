@@ -113,11 +113,12 @@ def calculate_bmi() -> None:
     bmi_num.configure(state="normal")
     bmi_meaning.configure(state="normal")
 
-    enter_data_error_title = "Входные данные"
-    separator_error_text = "В качестве разделителя используется не запятая, а точка."
-    length_error_text = "Длина вводимых чисел должна быть от 1 до 5 включительно."
-    value_error_text = "Введены не числа."
-    less_than_zero_error_text = "Рост или масса должны быть положительными."
+    if not enter_data_error_title:
+        enter_data_error_title = "Входные данные"
+        separator_error_text = "В качестве разделителя используется не запятая, а точка."
+        length_error_text = "Длина вводимых чисел должна быть от 1 до 5 включительно."
+        value_error_text = "Введены не числа."
+        less_than_zero_error_text = "Рост или масса должны быть положительными."
 
     if len(mass_entry.get()) < 1 or len(mass_entry.get()) > 5:
         showerror(title=enter_data_error_title, message=length_error_text)
