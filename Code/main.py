@@ -79,14 +79,6 @@ def set_en_lang() -> None:
 
 def evaluate_bmi(bmi: Union[int, float]) -> str:
     global level0, level1, level2, level3, level4, level5, level6
-    if not level0:
-        level0 = "Выраженный дефицит массы тела"
-        level1 = "Недостаточная (дефицит) масса тела"
-        level2 = "Норма"
-        level3 = "Избыточная масса тела (предожирение)"
-        level4 = "Ожирение 1 степени"
-        level5 = "Ожирение 2 степени"
-        level6 = "Ожирение 3 степени"
 
     if bmi <= 16:
         return level0
@@ -112,13 +104,6 @@ def calculate_bmi() -> None:
 
     bmi_num.configure(state="normal")
     bmi_meaning.configure(state="normal")
-
-    if not enter_data_error_title:
-        enter_data_error_title = "Входные данные"
-        separator_error_text = "В качестве разделителя используется не запятая, а точка."
-        length_error_text = "Длина вводимых чисел должна быть от 1 до 5 включительно."
-        value_error_text = "Введены не числа."
-        less_than_zero_error_text = "Рост или масса должны быть положительными."
 
     if len(mass_entry.get()) < 1 or len(mass_entry.get()) > 5:
         showerror(title=enter_data_error_title, message=length_error_text)
@@ -158,6 +143,20 @@ def calculate_bmi() -> None:
     bmi_num.configure(state="readonly")
     bmi_meaning.configure(state="readonly")
 
+
+level0 = "Выраженный дефицит массы тела"
+level1 = "Недостаточная (дефицит) масса тела"
+level2 = "Норма"
+level3 = "Избыточная масса тела (предожирение)"
+level4 = "Ожирение 1 степени"
+level5 = "Ожирение 2 степени"
+level6 = "Ожирение 3 степени"
+
+enter_data_error_title = "Входные данные"
+separator_error_text = "В качестве разделителя используется не запятая, а точка."
+length_error_text = "Длина вводимых чисел должна быть от 1 до 5 включительно."
+value_error_text = "Введены не числа."
+less_than_zero_error_text = "Рост или масса должны быть положительными."
 
 bmi_prog_label_txt = "ИМТ калькулятор"
 mass_lbl_txt = "Введите массу в кг"
